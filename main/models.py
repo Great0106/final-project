@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Category(models.Model):
@@ -15,19 +16,21 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    deleted_at = models.DateTimeField()
+    deleted_at = models.DateTimeField(null=True)
     published = models.BooleanField(default = False)
-    user_id = models.ForeignKey(
+    user = models.ForeignKey(
         User,
         on_delete = models.RESTRICT
     )
-    user_id = models.ForeignKey(
+    category = models.ForeignKey(
         Category,
         on_delete = models.RESTRICT
     )
