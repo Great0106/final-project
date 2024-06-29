@@ -8,6 +8,15 @@
         <h1 class="text-primary">
             Welcome to MyBlog
         </h1>
+
+        {{ post.content | safe }}
     </div>
+
+    <script>
+        const h1 = document.getElementByTagName("h1"):
+        for (const item of h1) {
+            item.classList.add("display-1")
+        }
+    </script>
 
 {% endblock content %}

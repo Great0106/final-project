@@ -131,3 +131,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "height": 500,
+    "width": "100%",
+    "menubar": False,
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
+    "searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,paste,"
+    "code,help,wordcount,codesample",
+    "toolbar": "bold italic underline strikethrough blockquote | heading |"
+    "alignleft aligncenter alignright alignjustify | bullist numlist | image | link | undo redo |",
+    "toolbar_groups" : {
+        "heading" : {
+            "icon" : "chevron-down",
+            "tooltips" : "Heading",
+            "items" : "h1 h2 h3 h4 h5 h6",
+        }
+    }
+}

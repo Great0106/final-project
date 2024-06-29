@@ -6,11 +6,13 @@
     <title>{% block title%}{% endblock title %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/prism.css' %}">
 </head>
 <body>
     
     {% block content%}{% endblock content %}
 
-    <script src="{% static 'main/js/bootstrap.min.js'%}">
+    <script src="{% static 'main/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'main/js/prism.js'%}"></script>
 </body>
 </html>
