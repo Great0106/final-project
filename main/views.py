@@ -9,7 +9,7 @@ def index(request):
     }
     return render(request, 'main/index.html', context)
 
-def index(request):
+# def index(request):
     return render(request, 'main/index.html')
 
 def post(request, post_id):
